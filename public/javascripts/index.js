@@ -100,7 +100,7 @@ async function checkActorOrDirector(input) {
 
       if (creditsData) {
         const isInMovie = creditsData.cast.some((movie) => movie.id === movieId);
-        console.log('is in Movie? ', isInMovie);
+
         if (isInMovie) {
           allMovies.push(input);
           displaySuccess();
