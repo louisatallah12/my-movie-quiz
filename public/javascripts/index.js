@@ -91,7 +91,6 @@ async function checkActorOrDirector(input) {
   try {
     const searchPersonUrl = `${BASE_URL}/search/person?api_key=${API_KEY}&query=${encodeURIComponent(input)}`;
     const personData = await fetchData(searchPersonUrl);
-    console.log('personData', personData);
 
     if (personData && personData.results.length > 0) {
       const personId = personData.results[0].id;
@@ -104,6 +103,7 @@ async function checkActorOrDirector(input) {
         if (isInMovie) {
           allMovies.push(input);
           displaySuccess();
+          
           counter++;
           inputId = `idi${counter}`;
           buttonCounter++;
